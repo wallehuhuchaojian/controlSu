@@ -17,10 +17,9 @@ import android.widget.Button
 import org.json.JSONException
 import org.json.JSONArray
 import org.json.JSONObject
-
-
-
-
+import java.util.*
+import com.baidu.voicerecognition.android.ui.BaiduASRDialog.STATUS_None
+import android.os.MessageQueue.OnFileDescriptorEventListener.EVENT_ERROR
 
 
 
@@ -32,46 +31,76 @@ class MainActivity : Activity() ,RecognitionListener {
     var bt:Button?=null
     override fun onReadyForSpeech(params: Bundle?) {
 //        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-        print("onReadyForSpeech")
+        print("准备就绪，可以开始说话");
     }
 
     override fun onRmsChanged(rmsdB: Float) {
 //        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-        print("onRmsChanged")
+        print("onRmsChanged"+rmsdB)
     }
 
     override fun onBufferReceived(buffer: ByteArray?) {
 //        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
         print("onBufferReceived")
     }
 
     override fun onPartialResults(partialResults: Bundle?) {
 //        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-        print("onPartialResults")
+        val nbest = partialResults?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
+        if (nbest?.size!! > 0) {
+            print("~临时识别结果：" + Arrays.toString(nbest.toArray(arrayOfNulls<String>(0))))
+
+        }
     }
 
     override fun onEvent(eventType: Int, params: Bundle?) {
 //        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-        print("onEvent")
+        when (eventType) {
+            EVENT_ERROR -> {
+                val reason = params?.get("reason").toString() + ""
+                print("EVENT_ERROR, " + reason)
+            }
+            VoiceRecognitionService.EVENT_ENGINE_SWITCH -> {
+                val type = params?.getInt("engine_type")
+                print("*引擎切换至" + if (type == 0) "在线" else "离线")
+            }
+        }
     }
 
     override fun onBeginningOfSpeech() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-        print("onBeginningOfSpeech")
+//        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        print("检测到用户的已经开始说话");
     }
 
     override fun onEndOfSpeech() {
 //        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-        print("onEndOfSpeech")
+        print("检测到用户的已经停止说话");
     }
 
     override fun onError(error: Int) {
 //        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-        print("onError" +error)
+
+        val sb = StringBuilder()
+        when (error) {
+            SpeechRecognizer.ERROR_AUDIO -> sb.append("音频问题")
+            SpeechRecognizer.ERROR_SPEECH_TIMEOUT -> sb.append("没有语音输入")
+            SpeechRecognizer.ERROR_CLIENT -> sb.append("其它客户端错误")
+            SpeechRecognizer.ERROR_INSUFFICIENT_PERMISSIONS -> sb.append("权限不足")
+            SpeechRecognizer.ERROR_NETWORK -> sb.append("网络问题")
+            SpeechRecognizer.ERROR_NO_MATCH -> sb.append("没有匹配的识别结果")
+            SpeechRecognizer.ERROR_RECOGNIZER_BUSY -> sb.append("引擎忙")
+            SpeechRecognizer.ERROR_SERVER -> sb.append("服务端错误")
+            SpeechRecognizer.ERROR_NETWORK_TIMEOUT -> sb.append("连接超时")
+        }
+        print("onError>>>>>>>>>>>>>" +sb)
     }
 
     override fun onResults(results: Bundle?) {
 //        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
+        val nbest = results?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
+        print("识别成功：" + Arrays.toString(nbest?.toArray(arrayOfNulls<String>(nbest.size))))
         print("onResults")
     }
     var  speech:SpeechRecognizer ?= null
@@ -99,6 +128,7 @@ class MainActivity : Activity() ,RecognitionListener {
             intent.putExtra(Constant.EXTRA_SOUND_SUCCESS, R.raw.bdspeech_recognition_success)
             intent.putExtra(Constant.EXTRA_SOUND_ERROR, R.raw.bdspeech_recognition_error)
             intent.putExtra(Constant.EXTRA_SOUND_CANCEL, R.raw.bdspeech_recognition_cancel)
+
             val tmp = sp.getString(Constant.EXTRA_INFILE, "")!!.replace(",.*".toRegex(), "").trim { it <= ' ' }
             intent.putExtra(Constant.EXTRA_INFILE, tmp)
             intent.putExtra(Constant.EXTRA_OUTFILE, "sdcard/outfile.pcm")
