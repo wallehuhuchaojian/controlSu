@@ -13,5 +13,10 @@
     </style>
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="TextHourDrag">
+        <item name="android:textColor">@color/colorHour</item>
+        <item name="android:textSize">@dimen/dayHourTextSize</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 
 </resources>
