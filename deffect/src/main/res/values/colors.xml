@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorHour">#7b7b7b</color>
-    <color name="colorHourDragSelect">#8a333333</color>
+    <color name="colorHourDragSelect">#8a1244b9</color>
+    <color name="colorHourDrag_bg">#b6b5b5</color>
 
 </resources>

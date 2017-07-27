@@ -52,15 +52,16 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         invalidateOptionsMenu();
     }
-    public static int  width,height;
+
     private void getDip(){
         WindowManager wm = (WindowManager) this.getSystemService(Context.WINDOW_SERVICE);
 
 
 
-        width = wm.getDefaultDisplay().getWidth();
+        Config.width = wm.getDefaultDisplay().getWidth();
 
-        height = wm.getDefaultDisplay().getHeight();
+        Config.height = wm.getDefaultDisplay().getHeight();
+
     }
 
     @Override

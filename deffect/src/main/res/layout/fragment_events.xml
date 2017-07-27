@@ -10,6 +10,8 @@
         android:id="@+id/drag_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+
         ></com.walle.controlself.deffect.dragSelector.DragSelectRecyclerView>
 
 </FrameLayout>

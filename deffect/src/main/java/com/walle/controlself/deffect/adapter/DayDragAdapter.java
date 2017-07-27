@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.walle.controlself.deffect.Config;
 import com.walle.controlself.deffect.MainActivity;
 import com.walle.controlself.deffect.R;
 import com.walle.controlself.deffect.dragSelector.DragSelectRecyclerViewAdapter;
@@ -101,7 +102,7 @@ public class DayDragAdapter extends DragSelectRecyclerViewAdapter<DayDragAdapter
             viewCover=itemView.findViewById(R.id.view_cover);
             container=itemView.findViewById(R.id.rl_container);
             RelativeLayout.LayoutParams params= (RelativeLayout.LayoutParams) container.getLayoutParams();
-            params.width= MainActivity.width/6;
+            params.width=(Config.width-16*Config.width/50)/8 ;
             params.height=params.width;
             container.setLayoutParams(params);
         }
