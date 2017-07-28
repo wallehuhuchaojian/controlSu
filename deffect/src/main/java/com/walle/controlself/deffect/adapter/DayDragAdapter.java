@@ -17,7 +17,7 @@ import com.walle.controlself.deffect.Config;
 import com.walle.controlself.deffect.MainActivity;
 import com.walle.controlself.deffect.R;
 import com.walle.controlself.deffect.dragSelector.DragSelectRecyclerViewAdapter;
-import com.walle.controlself.deffect.pojo.EventsInfo;
+
 
 import java.util.List;
 
@@ -26,7 +26,7 @@ import java.util.List;
  */
 
 public class DayDragAdapter extends DragSelectRecyclerViewAdapter<DayDragAdapter.DragHolder>implements View.OnClickListener, View.OnLongClickListener {
-    List<EventsInfo> eventsInfos;
+
     public interface ClickListener {
         void onClick(int index);
 
@@ -92,7 +92,7 @@ public class DayDragAdapter extends DragSelectRecyclerViewAdapter<DayDragAdapter
 
 
     public  class DragHolder extends RecyclerView.ViewHolder{
-        public EventsInfo info;
+
         public TextView tvHour;
         public View viewCover;
         public RelativeLayout container;

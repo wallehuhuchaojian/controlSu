@@ -1,7 +1,10 @@
 package com.walle.controlself.deffect;
 
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.util.Log;
@@ -39,14 +42,12 @@ public class EventsFragment extends Fragment implements DayDragAdapter.ClickList
     }
     private void viewId(){
         dragSelectRecyclerView=view.findViewById(R.id.drag_recycler);
-
         adapter=new DayDragAdapter(this);
         GridLayoutManager grid=new GridLayoutManager(getActivity(),8);
         dragSelectRecyclerView.setLayoutManager(grid);
         adapter.setSelectionListener(this);
         dragSelectRecyclerView.setAdapter(adapter);
         dragSelectRecyclerView.addItemDecoration(new DragHourDecoration());
-
     }
 
 

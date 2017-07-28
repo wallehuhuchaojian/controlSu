@@ -1,1 +1,1 @@
-include ':app', ':deffect'
+include ':app', ':deffect', ':greendaolib'
