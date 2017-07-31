@@ -42,6 +42,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
 
     compile project(path: ':greendaolib')
+    compile 'com.zhy:percent-support-extends:1.1.1'
 }
 
 

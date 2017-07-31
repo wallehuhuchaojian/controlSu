@@ -6,4 +6,6 @@
     <dimen name="nav_header_height">176dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="dayHourTextSize">20sp</dimen>
+    <dimen name="itemTitleSize">16sp</dimen>
+    <dimen name="itemSubTitleSize">13sp</dimen>
 </resources>

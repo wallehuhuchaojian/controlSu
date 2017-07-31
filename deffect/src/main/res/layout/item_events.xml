@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#017166"
+    >
+    <com.zhy.android.percent.support.PercentRelativeLayout
+        android:id="@+id/rl_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    <TextView
+        android:id="@+id/tv_event_todo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_heightPercent="10%sh"
+        app:layout_widthPercent="50%w"
+        android:text="todo"
+
+
+        android:gravity="center"
+        style="@style/TextItemTitle"
+        />
+        <TextView
+        android:layout_below="@+id/tv_event_todo"
+        android:id="@+id/tv_event_tobe"
+        android:layout_width="50dp"
+            app:layout_heightPercent="10%sh"
+            app:layout_widthPercent="50%w"
+        android:text="tobe"
+        android:gravity="center"
+        style="@style/TextSubItemTitle"
+        />
+
+    </com.zhy.android.percent.support.PercentRelativeLayout>
+
+</RelativeLayout>

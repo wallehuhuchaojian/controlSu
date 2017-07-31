@@ -12,7 +12,7 @@ import org.greenrobot.greendao.annotation.NotNull;
 public class EventsInfo {
     int status;//the status of events one of plan do check summarize;
     @Id(autoincrement = true)
-    private long id;
+    private Long id;
     @NotNull
     private String doWhat;//what thing to do
     private String doWanna;// the result wanna to get
@@ -49,20 +49,22 @@ public class EventsInfo {
     public void setDoWhat(String doWhat) {
         this.doWhat = doWhat;
     }
-    public long getId() {
-        return this.id;
+
+    public Long getId() {
+        return id;
     }
-    public void setId(long id) {
-        this.id = id;
-    }
+
     public int getStatus() {
         return this.status;
     }
     public void setStatus(int status) {
         this.status = status;
     }
-    @Generated(hash = 1926091581)
-    public EventsInfo(int status, long id, @NotNull String doWhat, String doWanna, String hours, int attributive, int color) {
+    public void setId(Long id) {
+        this.id = id;
+    }
+    @Generated(hash = 607947618)
+    public EventsInfo(int status, Long id, @NotNull String doWhat, String doWanna, String hours, int attributive, int color) {
         this.status = status;
         this.id = id;
         this.doWhat = doWhat;

@@ -18,5 +18,15 @@
         <item name="android:textSize">@dimen/dayHourTextSize</item>
         <item name="android:textStyle">bold</item>
     </style>
+    <style name="TextItemTitle">
+        <item name="android:textColor">@color/colorTextItemTitle</item>
+        <item name="android:textSize">@dimen/itemTitleSize</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+    <style name="TextSubItemTitle">
+        <item name="android:textColor">@color/colorTextItemSubTitle</item>
+        <item name="android:textSize">@dimen/itemSubTitleSize</item>
+        <item name="android:textStyle">normal</item>
+    </style>
 
 </resources>
