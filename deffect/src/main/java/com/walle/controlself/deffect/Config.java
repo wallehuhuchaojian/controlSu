@@ -13,5 +13,11 @@ public class Config {
         int checking=3;
         int adjusting=4;
     }
+    public interface PlanType{
+        int events=1;//events
+        int week=2;
+        int month=3;
+        int season=4;
+    }
 
 }

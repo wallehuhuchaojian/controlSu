@@ -1,0 +1,17 @@
+@startuml
+
+package "plan" {
+planed - [plan1]
+planed - [plan2]
+planed - [plan3]
+planed - [plan4]
+[wildplan]
+}
+
+package "Other Groups" {
+FTP - [Second Component]
+
+[First Component] --> FTP
+}
+
+@enduml

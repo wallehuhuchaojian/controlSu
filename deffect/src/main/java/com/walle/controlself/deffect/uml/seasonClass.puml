@@ -1,0 +1,44 @@
+@startuml
+
+abstract class Plant{
+   float  importantRatio
+   int colorStart
+   int colorEnd
+   String[] targets
+   String name
+   String[] steps
+   String reason
+   String[] disturbances
+   int status//doing,planing,outtime,cancel,undone,incomplete,complete
+   int finishMark
+}
+SeasonPlan  <|-- Plant
+MonthPlan  <|-- Plant
+WeekPlan  <|-- Plant
+class SeasonPlan{
+   MonthPlan[] monthPlan
+
+}
+abstract AbstractCollection
+interface List
+interface Collection
+
+List <|-- AbstractList
+Collection <|-- AbstractCollection
+
+Collection <|- List
+AbstractCollection <|- AbstractList
+AbstractList <|-- ArrayList
+
+class ArrayList {
+Object[] elementData
+size()
+}
+
+enum TimeUnit {
+DAYS
+HOURS
+MINUTES
+}
+
+@enduml

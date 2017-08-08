@@ -18,12 +18,13 @@ import com.walle.controlself.deffect.adapter.decoration.DragHourDecoration;
 import com.walle.controlself.deffect.dragSelector.DragSelectRecyclerView;
 import com.walle.controlself.deffect.tools.CovertTools;
 
-public class EventDetailActivity extends AppCompatActivity  implements DayDragAdapter.ClickListener,DayDragAdapter.SelectionListener{
+public class EventDetailActivity extends AppCompatActivity {
+    // implements DayDragAdapter.ClickListener,DayDragAdapter.SelectionListener
     private String TAG="EventDetailActivity";
-        DragSelectRecyclerView dragSelectRecyclerView;
+//        DragSelectRecyclerView dragSelectRecyclerView;
     private TextView tvBack,tvConfirm;
     private EditText etTodo,etToBe;
-        DayDragAdapter adapter;
+//    private   DayDragAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +35,7 @@ public class EventDetailActivity extends AppCompatActivity  implements DayDragAd
         viewId();
     }
         private void viewId(){
-            dragSelectRecyclerView= (DragSelectRecyclerView) findViewById(R.id.drag_recycler);
+//            dragSelectRecyclerView= (DragSelectRecyclerView) findViewById(R.id.drag_recycler);
             tvBack= (TextView) findViewById(R.id.tv_back);
             tvConfirm= (TextView) findViewById(R.id.tv_confirm);
             etTodo= (EditText) findViewById(R.id.et_do_what);
@@ -43,12 +44,12 @@ public class EventDetailActivity extends AppCompatActivity  implements DayDragAd
             tvConfirm.setOnClickListener(onClickListener);
 
 
-            adapter=new DayDragAdapter(this);
-            GridLayoutManager grid=new GridLayoutManager(this,8);
-            dragSelectRecyclerView.setLayoutManager(grid);
-            adapter.setSelectionListener(this);
-            dragSelectRecyclerView.setAdapter(adapter);
-            dragSelectRecyclerView.addItemDecoration(new DragHourDecoration());
+//            adapter=new DayDragAdapter(this);
+//            GridLayoutManager grid=new GridLayoutManager(this,8);
+//            dragSelectRecyclerView.setLayoutManager(grid);
+//            adapter.setSelectionListener(this);
+//            dragSelectRecyclerView.setAdapter(adapter);
+//            dragSelectRecyclerView.addItemDecoration(new DragHourDecoration());
     }
     View.OnClickListener onClickListener=new View.OnClickListener() {
         @Override
@@ -56,15 +57,15 @@ public class EventDetailActivity extends AppCompatActivity  implements DayDragAd
             if (view.getId()==tvBack.getId()){
                 finish();
             }else if (view.getId()==tvConfirm.getId()){
-               EventsInfoDao dao= (EventsInfoDao) DaoManager.getManager().getDao(EventsInfo.class);
-                EventsInfo eventsInfo=new EventsInfo();
-                eventsInfo.setDoWanna(etToBe.getText().toString());
-                eventsInfo.setDoWhat(etTodo.getText().toString());
-                eventsInfo.setColor(Color.RED);
-                Integer[] select= adapter.getSelectedIndices();
-                eventsInfo.setHours(CovertTools.integerToString(select));
-               long id= dao.insert(eventsInfo);
-                Log.d(TAG,"inserted id="+id);
+//               EventsInfoDao dao= (EventsInfoDao) DaoManager.getManager().getDao(EventsInfo.class);
+//                EventsInfo eventsInfo=new EventsInfo();
+//                eventsInfo.setDoWanna(etToBe.getText().toString());
+//                eventsInfo.setDoWhat(etTodo.getText().toString());
+//                eventsInfo.setColor(Color.RED);
+////                Integer[] select= adapter.getSelectedIndices();
+////                eventsInfo.setHours(CovertTools.integerToString(select));
+//               long id= dao.insert(eventsInfo);
+//                Log.d(TAG,"inserted id="+id);
 
 
             }
@@ -72,18 +73,18 @@ public class EventDetailActivity extends AppCompatActivity  implements DayDragAd
     };
 
 
-    @Override
-    public void onClick(int index) {
-        adapter.toggleSelected(index);
-    }
-
-    @Override
-    public void onLongClick(int index) {
-        dragSelectRecyclerView.setDragSelectActive(true, index);
-    }
-
-    @Override
-    public void onDragSelectionChanged(int count) {
-        Log.d(TAG,"onDragSelectionChanged>>>>>"+count);
-    }
+//    @Override
+//    public void onClick(int index) {
+//        adapter.toggleSelected(index);
+//    }
+//
+//    @Override
+//    public void onLongClick(int index) {
+//        dragSelectRecyclerView.setDragSelectActive(true, index);
+//    }
+//
+//    @Override
+//    public void onDragSelectionChanged(int count) {
+//        Log.d(TAG,"onDragSelectionChanged>>>>>"+count);
+//    }
 }
