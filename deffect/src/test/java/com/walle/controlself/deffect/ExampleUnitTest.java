@@ -1,6 +1,17 @@
 package com.walle.controlself.deffect;
 
+import com.example.greendaolib.DaoManager;
+import com.example.greendaolib.DbConfig;
+import com.example.greendaolib.pojo.db.PlanInfo;
+import com.example.greendaolib.pojo.db.PlanStatus;
+import com.example.greendaolib.pojo.db.Plant;
+import com.walle.controlself.deffect.data.PlanCommander;
+import com.walle.controlself.deffect.tools.TimeTools;
+
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -12,6 +23,6 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
+
     }
 }

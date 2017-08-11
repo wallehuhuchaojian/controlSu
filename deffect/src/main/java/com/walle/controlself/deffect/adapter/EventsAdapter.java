@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.greendaolib.pojo.db.EventsInfo;
 import com.walle.controlself.deffect.R;
 
 import java.util.List;
@@ -16,20 +15,20 @@ import java.util.List;
  */
 
 public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventHolder> {
-    List<EventsInfo> datas;
+    List<String> datas;
 
-    public EventsAdapter(List<EventsInfo> datas) {
+    public EventsAdapter(List<String> datas) {
         this.datas = datas;
     }
 
     public EventsAdapter() {
     }
 
-    public List<EventsInfo> getDatas() {
+    public List<String> getDatas() {
         return datas;
     }
 
-    public void setDatas(List<EventsInfo> datas) {
+    public void setDatas(List<String> datas) {
         this.datas = datas;
     }
 
@@ -40,9 +39,9 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventHolde
 
     @Override
     public void onBindViewHolder(EventHolder holder, int position) {
-        EventsInfo info=datas.get(position);
-        holder.tvTitle.setText(info.getDoWhat());
-        holder.tvSub.setText(info.getDoWanna());
+        String info=datas.get(position);
+        holder.tvTitle.setText(info);
+//        holder.tvSub.setText(info.getDoWanna());
 
     }
 

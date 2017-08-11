@@ -1,22 +1,11 @@
 package com.walle.controlself.deffect;
 
-import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import com.example.greendaolib.DaoManager;
-import com.example.greendaolib.dao.EventsInfoDao;
-import com.example.greendaolib.pojo.db.EventsInfo;
-import com.walle.controlself.deffect.adapter.DayDragAdapter;
-import com.walle.controlself.deffect.adapter.decoration.DragHourDecoration;
-import com.walle.controlself.deffect.dragSelector.DragSelectRecyclerView;
-import com.walle.controlself.deffect.tools.CovertTools;
 
 public class EventDetailActivity extends AppCompatActivity {
     // implements DayDragAdapter.ClickListener,DayDragAdapter.SelectionListener

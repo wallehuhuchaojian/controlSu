@@ -1,6 +1,10 @@
 @startuml
 
 abstract class Plant{
+   int flag
+   long createTime;
+   long closeTime
+   long belangsId
    float  importantRatio
    int colorStart
    int colorEnd
@@ -8,37 +12,19 @@ abstract class Plant{
    String name
    String[] steps
    String reason
-   String[] disturbances
-   int status//doing,planing,outtime,cancel,undone,incomplete,complete
+   String[] disturbances//干扰因素
+   int PlantStatus//
+   int FinishStatus//
    int finishMark
+   int  summaryId
+   int  PlantStatus
 }
+
+
 SeasonPlan  <|-- Plant
 MonthPlan  <|-- Plant
 WeekPlan  <|-- Plant
-class SeasonPlan{
-   MonthPlan[] monthPlan
 
-}
-abstract AbstractCollection
-interface List
-interface Collection
 
-List <|-- AbstractList
-Collection <|-- AbstractCollection
-
-Collection <|- List
-AbstractCollection <|- AbstractList
-AbstractList <|-- ArrayList
-
-class ArrayList {
-Object[] elementData
-size()
-}
-
-enum TimeUnit {
-DAYS
-HOURS
-MINUTES
-}
 
 @enduml

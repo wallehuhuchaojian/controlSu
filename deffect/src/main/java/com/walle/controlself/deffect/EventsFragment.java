@@ -1,12 +1,8 @@
 package com.walle.controlself.deffect;
 
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -15,13 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.greendaolib.DaoManager;
-import com.example.greendaolib.dao.EventsInfoDao;
-import com.example.greendaolib.pojo.db.EventsInfo;
-import com.walle.controlself.deffect.adapter.DayDragAdapter;
 import com.walle.controlself.deffect.adapter.EventsAdapter;
-import com.walle.controlself.deffect.adapter.decoration.DragHourDecoration;
-import com.walle.controlself.deffect.dragSelector.DragSelectRecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -57,8 +49,8 @@ public class EventsFragment extends Fragment
         initData();
     }
     private void initData(){
-        EventsInfoDao dao= (EventsInfoDao) DaoManager.getManager().getDao(EventsInfo.class);
-        List<EventsInfo> events=dao.loadAll();
+//        EventsInfoDao dao= (EventsInfoDao) DaoManager.getManager().getDao(EventsInfo.class);
+        List<String> events=new ArrayList<>();
         Log.d(TAG,events.toString());
         eventsAdapter=new EventsAdapter(events);
         eventsRecycler.setLayoutManager(new LinearLayoutManager(getContext()));

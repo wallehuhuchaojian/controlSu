@@ -36,6 +36,7 @@ public class DaoManager {
     }
 
     public static DaoManager getManager() {
+
         return manager;
     }
     public <T>  AbstractDao getDao(Class cl){

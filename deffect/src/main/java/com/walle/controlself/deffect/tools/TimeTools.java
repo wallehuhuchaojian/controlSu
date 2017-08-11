@@ -14,4 +14,9 @@ public class TimeTools {
         int mHour=mCalendar.get(Calendar.HOUR);
         return mHour;
     }
+    public static long getTodayLeft(){
+        Calendar cal   =   Calendar.getInstance();
+        cal.add(Calendar.DATE,  1);
+        return cal.getTime().getTime()-System.currentTimeMillis();
+    }
 }
