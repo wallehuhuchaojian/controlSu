@@ -1,0 +1,28 @@
+@startuml
+interface PlantStatus{
+int planing=1,//open and time is not over ----can change the plan any thing include delete
+int doing=2,//open and the time is in the plan time ---can change some,but can not delete
+int outTime=3//open and unfinished until now ----Authority same with doing
+int cancel=4//close and plant without complete----can not change plant ,just edit summary writable
+int incomplete=5//close and finish some items but not finish for all
+int complete=6//close finish complete
+}
+interface FinishStatus{
+int inTime=1;//finish all in time
+int cancel=2//close after time is up
+int undone=3//close before time up
+int inComplete=4//close the plant when have done some things but not finish ,
+}
+interface Summary{
+String self_evaluation
+int self_rating
+String[] summary
+}
+interface TimeType{
+     String season
+     String month
+     String week
+     String day
+ }
+
+@enduml

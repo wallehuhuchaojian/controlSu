@@ -1,0 +1,40 @@
+@startuml
+class plant{
+int status
+Info info
+long id
+long belansId
+int summary
+}
+class Status{
+boolean isColse
+long ,createTime,startTime,keepTime,lastUpdate,closeTime,summaryTime
+processStatus planing/doing/outTime/cancel/undone/complete/imComplete
+}
+class info{
+String name
+String[] targets,steps,disturbance,reasons
+}
+class summary{
+
+float rate
+String evaluation
+String[] summary
+}
+
+'db
+ class StringGroup{
+    long id
+    String type //summary,step,disturbance,reason
+    String data
+    String index
+    long beLongsId
+
+}
+
+
+
+
+
+
+@enduml

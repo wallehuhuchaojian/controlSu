@@ -1,0 +1,50 @@
+@startuml
+class Events{
+long createTime;
+long closeTime
+long id
+long belangsId
+int type
+long startTime
+long keep
+long finishStatusId
+float  importantRatio
+String name
+
+}
+interface EventsType{
+int  day
+int week
+int month
+int season
+}
+interface EventsShow{
+boolean adjourn
+boolean almostShow
+
+}
+
+abstract class AbstractList
+abstract AbstractCollection
+interface List
+interface Collection
+
+List <|-- AbstractList
+Collection <|-- AbstractCollection
+
+Collection <|- List
+AbstractCollection <|- AbstractList
+AbstractList <|-- ArrayList
+
+class ArrayList {
+Object[] elementData
+size()
+}
+
+enum TimeUnit {
+DAYS
+HOURS
+MINUTES
+}
+
+@enduml
