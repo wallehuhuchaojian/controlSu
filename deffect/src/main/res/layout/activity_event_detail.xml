@@ -39,6 +39,15 @@
 
                     />
                 <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toLeftOf="@+id/tv_confirm"
+                    android:layout_toRightOf="@+id/tv_back"
+                    android:hint="点击改名"
+                    android:gravity="center"
+                    />
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="confirm"
@@ -54,70 +63,15 @@
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
-
-<android.support.constraint.ConstraintLayout
-    android:layout_width="0dp"
-    android:layout_height="0dp"
-
-    android:id="@+id/constraintLayout"
-    app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
-    app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintBottom_toBottomOf="parent"
->
-
-
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/til_dowhat"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_margin="@dimen/activity_horizontal_margin"
-    app:layout_constraintTop_toTopOf="parent"
-
-    android:hint="please input what you wanna to do"
-
-        tools:layout_constraintRight_creator="1"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent">
-    <android.support.design.widget.TextInputEditText
-        android:id="@+id/et_do_what"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
-        />
-
-</android.support.design.widget.TextInputLayout>
-    <android.support.design.widget.TextInputLayout
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_tags"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/activity_horizontal_margin"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/til_dowhat"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+      ></android.support.v7.widget.RecyclerView>
 
-        android:hint="please input what you wanna to be"
 
-        >
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/et_do_how"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-
-            />
-
-    </android.support.design.widget.TextInputLayout>
-
-    <com.walle.controlself.deffect.dragSelector.DragSelectRecyclerView
-        android:id="@+id/drag_recycler"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="8dp"></com.walle.controlself.deffect.dragSelector.DragSelectRecyclerView>
-
-</android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>

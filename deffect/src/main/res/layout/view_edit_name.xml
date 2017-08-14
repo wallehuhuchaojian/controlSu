@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+
+
+
+    >
+<EditText
+    android:id="@+id/ed_name"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:inputType="text"
+    android:maxLines="1"
+    android:imeOptions="actionDone"
+    android:hint="what you want to"
+    android:layout_margin="@dimen/activity_horizontal_margin"
+    />
+    <TextView
+        android:layout_below="@+id/ed_name"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:id="@+id/tv_start"
+
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="开始"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:textColor="@color/colorHour"
+        android:layout_centerInParent="true"
+        android:background="@drawable/shap_heigh_light_bg"
+        android:layout_marginBottom="100dp"
+        />
+
+
+
+</RelativeLayout>

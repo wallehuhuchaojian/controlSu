@@ -11,7 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.greendaolib.DaoManager;
+import com.google.android.flexbox.FlexWrap;
+import com.google.android.flexbox.FlexboxLayoutManager;
 import com.walle.controlself.deffect.adapter.EventsAdapter;
+import com.walle.controlself.deffect.adapter.TagsAdapter;
+import com.walle.controlself.deffect.pojo.TagsInfo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,8 +28,9 @@ public class EventsFragment extends Fragment
 //        implements DayDragAdapter.ClickListener,DayDragAdapter.SelectionListener
 {
     private String TAG="EventsFragment";
- RecyclerView eventsRecycler,hoursRecycler;
+ RecyclerView eventsRecycler;
     EventsAdapter eventsAdapter;
+
     View view;
 //    DayDragAdapter adapter;
     public EventsFragment() {
@@ -40,37 +45,23 @@ public class EventsFragment extends Fragment
         if (view==null ){
             view=inflater.inflate(R.layout.fragment_events, container, false);
             viewId();
+
         }
         return view;
     }
     private void viewId(){
         eventsRecycler=view.findViewById(R.id.recycler_events);
-        hoursRecycler=view.findViewById(R.id.recycler_day_hours);
-        initData();
+
+        initEventsData();
     }
-    private void initData(){
-//        EventsInfoDao dao= (EventsInfoDao) DaoManager.getManager().getDao(EventsInfo.class);
+    private void initEventsData(){
         List<String> events=new ArrayList<>();
         Log.d(TAG,events.toString());
         eventsAdapter=new EventsAdapter(events);
         eventsRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
         eventsRecycler.setAdapter(eventsAdapter);
-
     }
 
 
-//    @Override
-//    public void onClick(int index) {
-//        adapter.toggleSelected(index);
-//    }
-//
-//    @Override
-//    public void onLongClick(int index) {
-//        dragSelectRecyclerView.setDragSelectActive(true, index);
-//    }
-//
-//    @Override
-//    public void onDragSelectionChanged(int count) {
-//        Log.d(TAG,"onDragSelectionChanged>>>>>"+count);
-//    }
+
 }

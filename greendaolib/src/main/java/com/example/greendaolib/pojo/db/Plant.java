@@ -29,71 +29,23 @@ public class Plant {
 
     private long statusId;
 
-    public PlanInfo getInfo() {
-        return info;
-    }
-
-    public void setInfo(PlanInfo info) {
-        this.info = info;
-    }
-
-    public PlanStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(PlanStatus status) {
-        this.status = status;
-    }
-
-    public PlanSummary getSummary() {
-        return summary;
-    }
-
-    public void setSummary(PlanSummary summary) {
-        this.summary = summary;
-    }
-
-    public long getStatusId() {
-        return this.statusId;
-    }
-    public void setStatusId(long statusId) {
-        this.statusId = statusId;
-    }
-   
-    public long getSummaryId() {
-        return this.summaryId;
-    }
-    public void setSummaryId(long summaryId) {
-        this.summaryId = summaryId;
-    }
-    public Long getBeLongsId() {
-        return this.beLongsId;
-    }
-    public void setBeLongsId(Long beLongsId) {
-        this.beLongsId = beLongsId;
-    }
-    public Long getId() {
-        return this.id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
-    public String getName() {
-        return this.name;
-    }
-    public void setName(String name) {
-        this.name = name;
+    public Plant() {
     }
     @Generated(hash = 914464644)
-    public Plant(Long id, @NotNull Long beLongsId, @NotNull String name, long summaryId, long statusId) {
+    public Plant(Long id, @NotNull Long beLongsId, @NotNull String name,
+            long summaryId, long statusId) {
         this.id = id;
         this.beLongsId = beLongsId;
         this.name = name;
         this.summaryId = summaryId;
         this.statusId = statusId;
     }
-    @Generated(hash = 878011190)
-    public Plant() {
+    public static Plant createNew(){
+        Plant plant=new Plant();
+        PlanStatus status=new PlanStatus();
+        status.setCreatTime(System.currentTimeMillis());
+        status.setLastUpDateTime(System.currentTimeMillis());
+        return plant;
     }
 
     @Override
@@ -108,5 +60,35 @@ public class Plant {
                 ", summaryId=" + summaryId +
                 ", statusId=" + statusId +
                 '}';
+    }
+    public long getStatusId() {
+        return this.statusId;
+    }
+    public void setStatusId(long statusId) {
+        this.statusId = statusId;
+    }
+    public long getSummaryId() {
+        return this.summaryId;
+    }
+    public void setSummaryId(long summaryId) {
+        this.summaryId = summaryId;
+    }
+    public String getName() {
+        return this.name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public Long getBeLongsId() {
+        return this.beLongsId;
+    }
+    public void setBeLongsId(Long beLongsId) {
+        this.beLongsId = beLongsId;
+    }
+    public Long getId() {
+        return this.id;
+    }
+    public void setId(Long id) {
+        this.id = id;
     }
 }

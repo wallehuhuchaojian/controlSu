@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <LinearLayout
+        android:id="@+id/ll_input"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:orientation="vertical"
+        >
+        <include
+            android:id="@+id/item_info_step"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            layout="@layout/view_item_string_group">
+        </include>
+        <include
+            android:layout_weight="1"
+            android:id="@+id/item_info_reason"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            layout="@layout/view_item_string_group">
+
+        </include>
+        <include
+            android:layout_weight="1"
+            android:id="@+id/item_info_disturbance"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            layout="@layout/view_item_string_group">
+
+        </include>
+        <include
+            android:layout_weight="1"
+            android:id="@+id/item_info_target"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            layout="@layout/view_item_string_group">
+
+        </include>
+
+    </LinearLayout>
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/fl_tags"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_input"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="step"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="reason"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="target"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="disturbance"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            />
+
+    </com.google.android.flexbox.FlexboxLayout>
+    <TextView
+        android:layout_below="@+id/fl_tags"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:id="@+id/tv_start"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="开始"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:textColor="@color/colorHour"
+        android:layout_centerInParent="true"
+        android:background="@drawable/shap_heigh_light_bg"
+        android:layout_marginBottom="100dp"
+        />
+
+
+
+
+
+</RelativeLayout>

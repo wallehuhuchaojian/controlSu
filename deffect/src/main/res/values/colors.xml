@@ -8,5 +8,7 @@
     <color name="colorTextItemSubTitle">#aeaeae</color>
     <color name="colorHourDragSelect">#8a1244b9</color>
     <color name="colorHourDrag_bg">#b6b5b5</color>
+    <color name="text_color_high_light">#6bf2e0</color>
+    <color name="text_color_high_light_bt">#5ccfc0</color>
 
 </resources>
