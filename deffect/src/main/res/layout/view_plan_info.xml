@@ -7,40 +7,10 @@
     <LinearLayout
         android:id="@+id/ll_input"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         >
-        <include
-            android:id="@+id/item_info_step"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            layout="@layout/view_item_string_group">
-        </include>
-        <include
-            android:layout_weight="1"
-            android:id="@+id/item_info_reason"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            layout="@layout/view_item_string_group">
 
-        </include>
-        <include
-            android:layout_weight="1"
-            android:id="@+id/item_info_disturbance"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            layout="@layout/view_item_string_group">
-
-        </include>
-        <include
-            android:layout_weight="1"
-            android:id="@+id/item_info_target"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            layout="@layout/view_item_string_group">
-
-        </include>
 
     </LinearLayout>
     <com.google.android.flexbox.FlexboxLayout
@@ -50,24 +20,28 @@
         android:layout_below="@+id/ll_input"
         >
         <TextView
+            android:id="@+id/tv_step"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="step"
             android:layout_margin="@dimen/activity_horizontal_margin"
             />
         <TextView
+            android:id="@+id/tv_reason"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="reason"
             android:layout_margin="@dimen/activity_horizontal_margin"
             />
         <TextView
+            android:id="@+id/tv_target"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="target"
             android:layout_margin="@dimen/activity_horizontal_margin"
             />
         <TextView
+            android:id="@+id/tv_disturbance"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="disturbance"

@@ -11,22 +11,26 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.greendaolib.pojo.db.GroupString;
+import com.example.greendaolib.pojo.db.PlanInfo;
 import com.example.greendaolib.pojo.db.Plant;
 import com.google.android.flexbox.FlexWrap;
 import com.google.android.flexbox.FlexboxLayoutManager;
 import com.walle.controlself.deffect.adapter.TagsAdapter;
 import com.walle.controlself.deffect.adapter.decoration.TagsDecoration;
 import com.walle.controlself.deffect.pojo.TagsInfo;
+import com.walle.controlself.deffect.view.PlanInfoDailog;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class EventDetailActivity extends AppCompatActivity implements TagsAdapter.TagsClick {
+public class EventDetailActivity extends AppCompatActivity implements TagsAdapter.TagsClick,PlanInfoDailog.EditComplete {
     private String TAG="EventDetailActivity";
     private TextView tvBack,tvConfirm,tvName;
     TagsAdapter tagsAdapter;
     RecyclerView tagsRecycler;
     BottomSheetDialog bottomSheetDialog;
+    private PlanInfoDailog infoDailog;
     Plant plant;
 
     @Override
@@ -108,15 +112,58 @@ public class EventDetailActivity extends AppCompatActivity implements TagsAdapte
         bottomSheetDialog.show();
     }
 
-
-
-
+private void showType(int type){
+    if (infoDailog==null){
+        infoDailog=new PlanInfoDailog(this,this);
+    }
+    infoDailog.show(type);
+}
 
     @Override
     public void onClick(int type) {
-        switch (type){
+        showType(type);
+    }
+
+    private void addInfo(TagsInfo tagsInfo){
+        if (plant.getInfo()==null){
+            plant.setInfo(new PlanInfo());
+        }
+        switch (tagsInfo.getType()){
             case Config.TAGSTYPE.step:
+                if (plant.getInfo().getStep()==null){
+                    plant.getInfo().setStep(new ArrayList<String>());
+                }
+                plant.getInfo().getStep().add(tagsInfo.getTag());
                 break;
+            case Config.TAGSTYPE.reason:
+                if (plant.getInfo().getReason()==null){
+                    plant.getInfo().setReason(new ArrayList<String>());
+                }
+                plant.getInfo().getReason().add(tagsInfo.getTag());
+                break;
+            case Config.TAGSTYPE.target:
+                if (plant.getInfo().getTarget()==null){
+                    plant.getInfo().setTarget(new ArrayList<String>());
+                }
+                plant.getInfo().getTarget().add(tagsInfo.getTag());
+                break;
+            case Config.TAGSTYPE.disturbance:
+                if (plant.getInfo().getDisturbance()==null){
+                    plant.getInfo().setDisturbance(new ArrayList<String>());
+                }
+                plant.getInfo().getDisturbance().add(tagsInfo.getTag());
+                break;
+
+
+        }
+    }
+    @Override
+    public void onComplete(List<TagsInfo> tagsInfos) {
+        if (tagsInfos==null)
+            return;
+        for (int i = 0; i < tagsInfos.size(); i++) {
+            addInfo(tagsInfos.get(i));
+
         }
     }
 }

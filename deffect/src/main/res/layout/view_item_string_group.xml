@@ -8,23 +8,24 @@
     >
     <TextView
         android:id="@+id/tv_tag_lebel"
-        android:layout_width="50dp"
-        android:layout_height="match_parent"
-        app:layout_heightPercent="10%sh"
-        app:layout_widthPercent="50%sw"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:text="label"
         android:gravity="left|center_vertical"
         style="@style/TextSubItemTitle"
+        android:layout_centerVertical="true"
         />
     <EditText
         android:id="@+id/et_tag"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/tv_tag_lebel"
         android:hint="when hint disappear press say or keyboard to input"
         android:gravity="left|center_vertical"
         style="@style/TextItemTitle"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_centerVertical="true"
         />
 
 

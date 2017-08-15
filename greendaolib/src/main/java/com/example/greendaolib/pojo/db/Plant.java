@@ -31,6 +31,31 @@ public class Plant {
 
     public Plant() {
     }
+
+    public PlanInfo getInfo() {
+        return info;
+    }
+
+    public void setInfo(PlanInfo info) {
+        this.info = info;
+    }
+
+    public PlanStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(PlanStatus status) {
+        this.status = status;
+    }
+
+    public PlanSummary getSummary() {
+        return summary;
+    }
+
+    public void setSummary(PlanSummary summary) {
+        this.summary = summary;
+    }
+
     @Generated(hash = 914464644)
     public Plant(Long id, @NotNull Long beLongsId, @NotNull String name,
             long summaryId, long statusId) {
