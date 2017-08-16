@@ -5,6 +5,7 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorHour">#7b7b7b</color>
     <color name="colorTextItemTitle">#ffffff</color>
+    <color name="colorTextItemHeaderTitle">#6bf2e0</color>
     <color name="colorTextItemSubTitle">#aeaeae</color>
     <color name="colorHourDragSelect">#8a1244b9</color>
     <color name="colorHourDrag_bg">#b6b5b5</color>

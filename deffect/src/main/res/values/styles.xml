@@ -28,5 +28,11 @@
         <item name="android:textSize">@dimen/itemSubTitleSize</item>
         <item name="android:textStyle">normal</item>
     </style>
+    <style name="TextItemHeader">
+        <item name="android:textColor">@color/colorTextItemHeaderTitle</item>
+        <item name="android:textSize">@dimen/itemSubTitleSize</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:gravity">center_vertical|left</item>
+    </style>
 
 </resources>
